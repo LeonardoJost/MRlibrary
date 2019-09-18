@@ -31,4 +31,5 @@ These can all be modified by the parameters. Experiment with different combinati
 
 ## Literature
 Ooms, J. (2018). magick: Advanced Graphics and Image-Processing in R. R package version 2.0. https://CRAN.R-project.org/package=magick
+
 Peters, M., & Battista, C. (2008). Applications of mental rotation figures of the Shepard and Metzler type and description of a mental rotation stimulus library. Brain and cognition, 66(3), 260-264.
