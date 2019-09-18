@@ -6,7 +6,7 @@ This library consists of cube figures, which are commonly used in mental rotatio
 2. There they are. (see Subfolders and naming structure)
 
 ## Usage to generate own figures
-1. Create R project/set working directory.
+1. Create R project/set working directory. Install magick package (Ooms, 2018), as it is used.
 2. Set parameters according to own wishes. The parameter file contains comments regarding the usage. While default values are a good baseline for testing as well as experiments, changes are suggested. Running the code with default parameters will just regenerate the pregenerated cube figures.
 3. Run the main project file.
 4. Wait.
