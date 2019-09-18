@@ -7,7 +7,7 @@ This library consists of cube figures, which are commonly used in mental rotatio
 
 ## Usage to generate own figures
 1. Create R project/set working directory. Install magick package (Ooms, 2018), as it is used.
-2. Set parameters according to own wishes. The parameter file contains comments regarding the usage. While default values are a good baseline for testing as well as experiments, changes are suggested. Running the code with default parameters will just regenerate the pregenerated cube figures.
+2. Set parameters according to own wishes. The parameter file contains comments regarding possible values and effects. While default values are a good baseline for testing as well as experiments, changes are suggested. Running the code with default parameters will just regenerate the pregenerated cube figures.
 3. Run the main project file.
 4. Wait.
 5. The desired figures should now be located in the folder specified in the parameters. (see Subfolders and naming structure)
@@ -15,7 +15,7 @@ This library consists of cube figures, which are commonly used in mental rotatio
 ## Options, Properties, ...
 
 ### Subfolders and naming structure
-Figures are arranged in a folder by subfolders for colors and for base figures and rotated figures. For each background color a subfolder of the name color_back exists, within which another subfolder containing the colors of the cubes exists for each combination of colors. The color folders are named after the only or the concatenation using "-" of the first two colors used. Within the color subfolders, there are even more subfolders for base figures and rotational axes (base,x,y,z, combined), where you will finally find the images. Each figure is named in the form modelNumber_orientation_rotationAxis_rotationAngle.
+Figures are arranged in a folder by subfolders for colors and for base figures and rotated figures. For each background color a subfolder of the name color_back exists, within which another subfolder containing the colors of the cubes exists for each combination of colors. The color folders are named after the only or the concatenation using "-" of the first two colors used. Within the color subfolders, there are even more subfolders for base figures and rotational axes (base, x, y, z, combined), where you will finally find the images. Each figure is named in the form modelNumber_orientation_rotationAxis_rotationAngle. The rotationAxis_rotationAngle part is repeated 0-3 times as appropriate.
 
 ### Generate custom cube figures
 To add a custom cube figure, open customModels.R and add or edit a return number. Specify all three dimensional coordinates of the bottom left corner of each cube in the returned matrix. The cubes should be ordered in a way that fits the coloring (if using multiple colors). The first cube will be colored in the first color, second in second color, and so on, with colors starting from the first color again after the last color is reached. Custom colorings can be specified in the getColors function. For examples of cube figure coordinates, see custom model 1 or all 16 models in petersBattistaModels.R.
@@ -27,6 +27,8 @@ To add custom noncube figures, proceed as with custom cube figures, just specify
 This one is easy. Specify your desired background image in the parameters and set the backgroundColor to 'none'. Use quadratic images to avoid skewed results.
 
 ### Use other angles/colors/orientations/centering...
-These can all be modified by the parameters. Experiment with different combinations until you get the desired result. Do not ask for help. You can do it.
+These can all be modified by the parameters. Experiment with different combinations until you get the desired result.
 
 ## Literature
+Ooms, J. (2018). magick: Advanced Graphics and Image-Processing in R. R package version 2.0. https://CRAN.R-project.org/package=magick
+Peters, M., & Battista, C. (2008). Applications of mental rotation figures of the Shepard and Metzler type and description of a mental rotation stimulus library. Brain and cognition, 66(3), 260-264.
