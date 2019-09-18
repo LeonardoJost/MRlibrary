@@ -1,5 +1,5 @@
 # MRlibrary
-This library consists of cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (tbd).
+This library contains cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (tbd).
 
 ## Usage of pregenerated figures
 1. Open the figs folder.
