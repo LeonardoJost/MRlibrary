@@ -30,7 +30,7 @@ This one is easy. Specify your desired background image in the parameters and se
 These can all be modified by the parameters. Experiment with different combinations until you get the desired result.
 
 ## Literature
-Jost, L., Jansen, P. (2019). Unpublished manuscript.
+Jost, L., & Jansen, P. (2019). Unpublished manuscript.
 
 Ooms, J. (2018). magick: Advanced Graphics and Image-Processing in R. R package version 2.0. https://CRAN.R-project.org/package=magick
 
