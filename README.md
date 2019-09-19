@@ -1,16 +1,16 @@
 # MRlibrary
-This library contains cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (tbd).
+This library contains cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (Jost & Jansen, 2019).
 
 ## Usage of pregenerated figures
 1. Open the figs folder.
-2. There they are. (see Subfolders and naming structure)
+2. There they are. (see subfolders and naming structure)
 
 ## Usage to generate own figures
 1. Create R project/set working directory. Install magick package (Ooms, 2018), as it is used.
 2. Set parameters according to own wishes. The parameter file contains comments regarding possible values and effects. While default values are a good baseline for testing as well as experiments, changes are suggested. Running the code with default parameters will just regenerate the pregenerated cube figures.
 3. Run the main project file.
-4. Wait.
-5. The desired figures should now be located in the folder specified in the parameters. (see Subfolders and naming structure)
+4. Wait. Depending on your parameter choices and computing power this might take from a few seconds to a few days.
+5. The desired figures should now be located in the folder specified in the parameters. (see subfolders and naming structure)
 
 ## Options, Properties, ...
 
@@ -30,6 +30,8 @@ This one is easy. Specify your desired background image in the parameters and se
 These can all be modified by the parameters. Experiment with different combinations until you get the desired result.
 
 ## Literature
+Jost, L., Jansen, P. (2019). Unpublished manuscript.
+
 Ooms, J. (2018). magick: Advanced Graphics and Image-Processing in R. R package version 2.0. https://CRAN.R-project.org/package=magick
 
 Peters, M., & Battista, C. (2008). Applications of mental rotation figures of the Shepard and Metzler type and description of a mental rotation stimulus library. Brain and cognition, 66(3), 260-264.
