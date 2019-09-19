@@ -47,6 +47,7 @@ imageSize=720
 #use pixelDiameter=1 if only the points are supposed to be drawn
 pixelDiameter=70
 #calculate rotations by 0 degrees for each axis?
+#unrotated base models are always saved, this option saves another copy for every axis
 zeroRotations=FALSE
 
 ##model parameters
@@ -67,12 +68,12 @@ rotationAngleZBase=15*pi/180
 #difference between two angles in single axis rotations in deg
 angleDiff=15
 #calculate combined rotations?
-combinedRotations=FALSE
+combinedRotations=TRUE
 #difference between two angles in combined condition using all three rotational axes at once
 #number of images generated increases by power of 3, at 45° (7 different angles) 7^3=343 images are generated
 angleDiffCombined=45
 #which models to use
-modelNumbers=1
+modelNumbers=1:16
 #use models similar to the library of Peters and Battista (2008) or custom models?
 usePetersBattistaModels=TRUE
 

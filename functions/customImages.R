@@ -24,7 +24,7 @@ source("functions/customModels.R")
 #set parameters
 source("functions/parameters.R")
 #change some parameters
-baseFolder="figs_paper\\"
+baseFolder="figs\\"
 centering="none"
 backgroundColor='black'
 modelNumber=1
