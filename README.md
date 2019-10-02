@@ -29,6 +29,30 @@ This one is easy. Specify your desired background image in the parameters and se
 ### Use other angles/colors/orientations/centering...
 These can all be modified by the parameters. Experiment with different combinations until you get the desired result.
 
+### Advice/Background on Parameter choices
+The default background is transparent and should work well for most cases instead of generating every file multiple times for different background colors.
+
+Optical centering is performed by centering the bounding box of the figure. An alternative would be to center the bounding ball, as it is invariant to rotation. For typical figures, where the bounding box is spanned by diagonal elements, or for symmetric figures (e.g. x or + shapes), this makes no difference, but small differences (not necessarily improvements) are possible for very asymmetric figures (e.g. T shapes). Additionally, the bounding box is much easier to compute.
+
+The default parameters differ in some places from the values used in Jost and Jansen (2019). This includes centering, size and base angles, which were chosen in part to be more comparable. Upon reflection, we have drafted these new suggestions as default. Not included in the default values is the additional advice to generate the pictures in the dimensions that are actually used to avoid artifacts from resizing.
+
+## Other
+
+### Coding Issues
+The code works, but includes some questionable choices, needlessly complicated structure. This was mostly done for simplicity or convenience, but some issues shall be mentioned here: The parameters are set as global variables, whereas they could be local and moreover will sometimes appear under the same name as local parameters (although mostly using the same value). The program also relies on a somewhat blank background image, which could also be created in code by r low level graphics. As with all code, we have also included unconventional variable names and added comments where they are useless while leaving them where they would be useful.
+
+### Unused functions
+The project also includes some unused functions, which were nevertheless included and will be explained briefly:
+#### CustomImages.R
+This file was used to generate custom images, e.g. including more than one figure in a single image. The code can be used to recreate all images in Jost and Jansen (2019) or adapted for your own custom images.
+#### ImageRotate.R
+This function was used to generate picture plane rotations of given images. Where only these rotations are needed and complex models are used, this code will run faster than generating each figure from scratch. Mildly experienced programmers will probably know alternatives (such as imagemagick software, on which the here used magick package is based).
+
+### Adaptation
+Some simple adaptations, which can easily be done yourself: 
+#### Change the order of rotation
+Open ImageManipulation.R and change the order in rotatePoint function.
+
 ## Literature
 Jost, L., & Jansen, P. (2019). Unpublished manuscript.
 
