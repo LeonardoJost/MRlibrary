@@ -21,6 +21,9 @@ generateAllImages=function(){
     #code timing
     startTimeTotal=proc.time()
   }
+  #load blank image
+  backgroundFromFile=image_read(backgroundImage)
+  backgroundFromFile=image_scale(backgroundFromFile,imageSize)
   #loop over all models
   for(modelNumber in modelNumbers) {
     #model processing output
@@ -32,9 +35,12 @@ generateAllImages=function(){
       colorString=ifelse(length(colors)>1,paste(colors[1],colors[2],sep="-"),colors[1])
       #loop over all background colors
       for(backgroundColor in backgroundColors) {
+        #load blank image
+        background=backgroundFromFile
         #fill background with color
-        if(backgroundColor!='none')
-          background=image_fill(background, backgroundColor, point = "+0+0", fuzz = 100)
+        if(backgroundColor!='none') {
+          background=image_background(background, backgroundColor, flatten=TRUE)
+        }
         #create directories, if necessary
         baseFolderWithBG=paste(baseFolder,"\\",backgroundColor,"_back\\",colorString,"\\",sep="")
         createDirs(baseFolderWithBG,c("x","y","z","base","combined"))

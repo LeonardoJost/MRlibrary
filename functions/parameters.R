@@ -22,7 +22,8 @@
 ##color Options
 #background Colors: for all Elements of backgroundColors, all Stimuli will be created
 #if no background coloring is desired, use 'none', the background image will be kept the way it is
-backgroundColors=c('white','black')
+#background color will only be applied to transparent parts of the background image
+backgroundColors=c('none')
 #color of the borders of the cubes
 borderColor='black'
 #list of vector of colors (output will be generated for each element of the list)
@@ -42,7 +43,7 @@ backgroundImage='data\\background.png'
 #file format of images, all image types supported by magick should be possible
 fileFormat="png"
 #width of image (height is adjusted accordingly, use quadratic images for best results)
-imageSize=720
+imageSize=600
 #cube diameter in pixels
 #use pixelDiameter=1 if only the points are supposed to be drawn
 pixelDiameter=70
@@ -62,7 +63,7 @@ orientations=c("a","b")
 #options: "none","weight","optical"
 centering="optical"
 #rotation angles of base image (in rad)
-rotationAngleXBase=-30*pi/180
+rotationAngleXBase=-15*pi/180
 rotationAngleYBase=0*pi/180
 rotationAngleZBase=15*pi/180
 #difference between two angles in single axis rotations in deg
@@ -81,7 +82,7 @@ usePetersBattistaModels=TRUE
 #give output whenever occlusions occur?
 showOcclusions=FALSE
 #show timing
-showTimes=TRUE
+showTimes=FALSE
 #show output files as they are generated
 showFiles=FALSE
 #show which model is being processed

@@ -24,10 +24,6 @@ source("functions/customModels.R")
 #set parameters
 source("functions/parameters.R")
 
-#load blank image
-background=image_read(backgroundImage)
-background=image_scale(background,imageSize)
-
 #generate all images according to parameters
 generateAllImages()
 
