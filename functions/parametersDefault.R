@@ -65,10 +65,12 @@ centering="optical"
 rotationAngleXBase=-15*pi/180
 rotationAngleYBase=0*pi/180
 rotationAngleZBase=15*pi/180
+#rotation axes
+#include all desired rotation axes
+#include "combined" if rotations around all three axes is desired
+axes=c("x","y","z","combined")
 #difference between two angles in single axis rotations in deg
 angleDiff=15
-#calculate combined rotations?
-combinedRotations=TRUE
 #difference between two angles in combined condition using all three rotational axes at once
 #number of images generated increases by power of 3, at 45° (7 different angles) 7^3=343 images are generated
 angleDiffCombined=45
