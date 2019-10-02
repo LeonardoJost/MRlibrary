@@ -43,7 +43,7 @@ generateAllImages=function(){
         }
         #create directories, if necessary
         baseFolderWithBG=paste(baseFolder,"\\",backgroundColor,"_back\\",colorString,"\\",sep="")
-        createDirs(baseFolderWithBG,c("x","y","z","base","combined"))
+        createDirs(baseFolderWithBG,c(axes,"base"))
         #loop over orientations
         for(orientation in orientations) {
           #time output
@@ -79,47 +79,53 @@ generateAllImages=function(){
           }
           #loop over angles
           #rotation around y Axis
-          for(j in (1-zeroRotations):ceiling(360/angleDiff-1)) {
-            #calculate rotation angle
-            rotY=rotationAngleYBase+j*angleDiff*pi/180
-            folder=paste(baseFolderWithBG,"y\\",sep="")
-            fileName=paste(modelNumber,"_",orientation,"_y_",j*angleDiff+addBaseAngle*rotationAngleYBase,sep="")
-            drawCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,background,rotX,rotY,rotZ,borderColor,colors,folder,fileName,fileFormat,showOcclusions)
-            #file generation output
-            if(showFiles) {
-              writeLines(paste("Output file generated:",folder,fileName,".",fileFormat,sep=""))
+          if ("y" %in% axes) {
+            for(j in (1-zeroRotations):ceiling(360/angleDiff-1)) {
+              #calculate rotation angle
+              rotY=rotationAngleYBase+j*angleDiff*pi/180
+              folder=paste(baseFolderWithBG,"y\\",sep="")
+              fileName=paste(modelNumber,"_",orientation,"_y_",j*angleDiff+addBaseAngle*rotationAngleYBase,sep="")
+              drawCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,background,rotX,rotY,rotZ,borderColor,colors,folder,fileName,fileFormat,showOcclusions)
+              #file generation output
+              if(showFiles) {
+                writeLines(paste("Output file generated:",folder,fileName,".",fileFormat,sep=""))
+              }
             }
+            #reset angle
+            rotY=rotationAngleYBase
           }
-          #reset angle
-          rotY=rotationAngleYBase
           #rotation around x Axis
-          for(j in (1-zeroRotations):ceiling(360/angleDiff-1)) {
-            #calculate rotation angle
-            rotX=rotationAngleXBase+j*angleDiff*pi/180
-            folder=paste(baseFolderWithBG,"x\\",sep="")
-            fileName=paste(modelNumber,"_",orientation,"_x_",j*angleDiff+addBaseAngle*rotationAngleXBase,sep="")
-            drawCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,background,rotX,rotY,rotZ,borderColor,colors,folder,fileName,fileFormat,showOcclusions)
-            #file generation output
-            if(showFiles) {
-              writeLines(paste("Output file generated:",folder,fileName,".",fileFormat,sep=""))
+          if ("x" %in% axes) {
+            for(j in (1-zeroRotations):ceiling(360/angleDiff-1)) {
+              #calculate rotation angle
+              rotX=rotationAngleXBase+j*angleDiff*pi/180
+              folder=paste(baseFolderWithBG,"x\\",sep="")
+              fileName=paste(modelNumber,"_",orientation,"_x_",j*angleDiff+addBaseAngle*rotationAngleXBase,sep="")
+              drawCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,background,rotX,rotY,rotZ,borderColor,colors,folder,fileName,fileFormat,showOcclusions)
+              #file generation output
+              if(showFiles) {
+                writeLines(paste("Output file generated:",folder,fileName,".",fileFormat,sep=""))
+              }
             }
+            #reset angle
+            rotX=rotationAngleXBase
           }
-          #reset angle
-          rotX=rotationAngleXBase
           #rotation around z axis
-          for(j in (1-zeroRotations):ceiling(360/angleDiff-1)) {
-            #calculate rotation angle
-            rotZ=rotationAngleZBase+j*angleDiff*pi/180
-            folder=paste(baseFolderWithBG,"z\\",sep="")
-            fileName=paste(modelNumber,"_",orientation,"_z_",j*angleDiff+addBaseAngle*rotationAngleZBase,sep="")
-            drawCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,background,rotX,rotY,rotZ,borderColor,colors,folder,fileName,fileFormat,showOcclusions)
-            #file generation output
-            if(showFiles) {
-              writeLines(paste("Output file generated:",folder,fileName,".",fileFormat,sep=""))
+          if ("z" %in% axes) {
+            for(j in (1-zeroRotations):ceiling(360/angleDiff-1)) {
+              #calculate rotation angle
+              rotZ=rotationAngleZBase+j*angleDiff*pi/180
+              folder=paste(baseFolderWithBG,"z\\",sep="")
+              fileName=paste(modelNumber,"_",orientation,"_z_",j*angleDiff+addBaseAngle*rotationAngleZBase,sep="")
+              drawCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,background,rotX,rotY,rotZ,borderColor,colors,folder,fileName,fileFormat,showOcclusions)
+              #file generation output
+              if(showFiles) {
+                writeLines(paste("Output file generated:",folder,fileName,".",fileFormat,sep=""))
+              }
             }
           }
           #combined
-          if(combinedRotations) {
+          if ("combined" %in% axes) {
             for(j in 0:ceiling(360/angleDiffCombined-1)) {
               for(l in 0:ceiling(360/angleDiffCombined-1)) {
                 for(k in 0:ceiling(360/angleDiffCombined-1)) {

@@ -30,12 +30,12 @@ borderColor='black'
 #c('white','grey') for checkered pattern (more than 2 possible)
 #order of colors matters
 #colors can also be specified by "#rrggbb"
-colorList=list('white',c('white','grey'))
+colorList=list(c('white','grey','red'))
 
 
 ##folders and formats
 #base Folder for output relative to working directory
-baseFolder="figs\\"
+baseFolder="figs\\test\\"
 #Use angle differences to base angle or total rotation angle for naming output files?
 addBaseAngle=FALSE
 #image to use as a starting point for the background
@@ -66,15 +66,17 @@ centering="optical"
 rotationAngleXBase=-15*pi/180
 rotationAngleYBase=0*pi/180
 rotationAngleZBase=15*pi/180
+#rotation axes
+#include all desired rotation axes
+#include "combined" if rotations around all three axes is desired
+axes=c("x","y","z","combined")
 #difference between two angles in single axis rotations in deg
-angleDiff=15
-#calculate combined rotations?
-combinedRotations=TRUE
+angleDiff=150
 #difference between two angles in combined condition using all three rotational axes at once
 #number of images generated increases by power of 3, at 45° (7 different angles) 7^3=343 images are generated
-angleDiffCombined=45
+angleDiffCombined=160
 #which models to use
-modelNumbers=1:16
+modelNumbers=1
 #use models similar to the library of Peters and Battista (2008) or custom models?
 usePetersBattistaModels=TRUE
 
@@ -84,6 +86,6 @@ showOcclusions=FALSE
 #show timing
 showTimes=FALSE
 #show output files as they are generated
-showFiles=FALSE
+showFiles=TRUE
 #show which model is being processed
 showModels=TRUE
