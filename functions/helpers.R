@@ -77,7 +77,7 @@ addFaceToMatrix=function(gridMatrix,xs,ys,zs) {
 #uses parameters, which are set only in customImages.R
 showImages=function(){
   #set background color
-  img=image_fill(background, backgroundColor, point = "+0+0", fuzz = 100)
+  img=image_background(background, backgroundColor, flatten=TRUE)
   for(i in 1:nrow(pos)){
     #add single Figure to img
     #get base model

@@ -92,7 +92,7 @@ getColors=function(number,colors,petersBattista,numberOfPoints=0) {
     return(getColorsPetersBattista(number,colors))
   if(numberOfPoints==0)
     numberOfPoints=ncol(getModel(number,petersBattista))
-  return(c(1:numberOfPoints%%length(colors)+1))
+  return(c(0:(numberOfPoints-1)%%length(colors)+1))
 }
 
 #apply centering to a model

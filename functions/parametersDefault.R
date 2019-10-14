@@ -26,10 +26,10 @@ backgroundColors=c('none')
 #color of the borders of the cubes
 borderColor='black'
 #list of vector of colors (output will be generated for each element of the list)
-#c('white','grey') for checkered pattern (more than 2 possible)
+#c('grey','white') for checkered pattern (more than 2 possible)
 #order of colors matters
 #colors can also be specified by "#rrggbb"
-colorList=list('white',c('white','grey'))
+colorList=list('white',c('grey','white'))
 
 
 ##folders and formats

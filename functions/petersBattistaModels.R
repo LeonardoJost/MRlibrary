@@ -215,8 +215,9 @@ getModelPetersBattista=function(number){
 #get the colors for the model
 getColorsPetersBattista=function(number,colors) {
   if (number %in% c(1,2,3,4,6,7,8,9,10,11,12,13,14,15,16))
-    return(c(1:10%%length(colors)+1))
+    return(c(0:9%%length(colors)+1))
   else
-    return(c(2:10%%length(colors)+1))
+    #model 5 only uses 9 cubes and starts with white in checkered pattern, other models start with grey in our notation
+    return(c(1:9%%length(colors)+1)) 
 }
 

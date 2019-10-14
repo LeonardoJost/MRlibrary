@@ -36,7 +36,11 @@ rotationAngleXBase=-30*pi/180
 rotationAngleYBase=0*pi/180
 rotationAngleZBase=15*pi/180
 usePetersBattistaModels=TRUE
-colors=c('white','grey')
+colors=c('grey','white')
+
+#load blank image
+backgroundFromFile=image_read(backgroundImage)
+background=image_scale(backgroundFromFile,imageSize)
 
 ### experimental setup
 #number of figures should be number of rows in pos and angles and number of elements in orientations
