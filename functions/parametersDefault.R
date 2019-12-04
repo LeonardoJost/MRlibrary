@@ -88,3 +88,5 @@ showTimes=FALSE
 showFiles=FALSE
 #show which model is being processed
 showModels=TRUE
+#show if any points lie out of boundary of image
+showDimensionExceed=TRUE

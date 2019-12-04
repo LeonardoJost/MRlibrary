@@ -18,6 +18,7 @@
 ## Warning: No Sanity Checks are performed for most parameters
 ## Bad choices might lead to undesired behavior or infinite loops
 ## Activate runtime output parameters to check program behavior during runtime
+#to revert to default parameters either copy values from parametersDefault.R or comment/remove parameters in this file
 
 ##color Options
 #background Colors: for all Elements of backgroundColors, all Stimuli will be created
@@ -89,3 +90,5 @@ showTimes=FALSE
 showFiles=FALSE
 #show which model is being processed
 showModels=TRUE
+#show if any points lie out of boundary of image
+showDimensionExceed=TRUE

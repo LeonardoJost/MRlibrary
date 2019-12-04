@@ -68,6 +68,12 @@ drawCubeBottomLeft=function(bottomLeft,distance,rotationAngleX,rotationAngleY,ro
   pointsAsMatrix=getRotatedCube(bottomLeft,distance,rotationAngleX,rotationAngleY,rotationAngleZ)
   #draw visible faces of cube
   drawVisibleFacesMatrix(pointsAsMatrix,colorLines,colorFill,visibleFaces)
+  if(showDimensionExceed) {
+    maximalExtensionXZ=max(abs(pointsAsMatrix[c(1,3),]))
+  } else {
+    maximalExtensionXZ=0
+  }
+  return(maximalExtensionXZ)
 }
 #calculate coordinates of rotated cube
 getRotatedCube=function(bottomLeft,distance,rotationAngleX,rotationAngleY,rotationAngleZ) {
@@ -156,6 +162,18 @@ drawCubeFigure=function(bottomLeftPoints,pixelDiameter,pointColors,background, r
   #draw points, if no cubes are supposed to be drawn, else draw a cube for each point
   if (pixelDiameter==1)
   {
+    #warning if points lie outside of image boundary (botoom left points are all points)
+    if(showDimensionExceed) {
+      maximalExtensionXZ=max(abs(bottomLeftPointsRotated[c(1,3),]))
+      if(round(maximalExtensionXZ)-imageSize/2>0) {
+        writeLines(paste("Warning! Some points could not be drawn in file ",folder,fileName,".",fileFormat,
+                         "\nMaximal values are ",round(maximalExtensionXZ-imageSize/2)," pixels outside of image border",sep=""))
+      }
+      if(round(maximalExtensionXZ)-imageSize/2==0) {
+        writeLines(paste("Warning! Some points in file ",folder,fileName,".",fileFormat,
+                         "\n lie exactly on the image border. Please inspect manually. (Image contains an even number of pixels so center is not symmetric)",sep=""))
+      }
+    }
     #draw points
     points(bottomLeftPointsRotated[1,],bottomLeftPointsRotated[3,],col=colors[pointColorsNewOrder],type="p",pch=".")
   } else {
@@ -172,8 +190,18 @@ drawCubeFigure=function(bottomLeftPoints,pixelDiameter,pointColors,background, r
                        folder,fileName,".",fileFormat,sep=""))
     }
     #draw cubes
+    maximalExtensionXZ=0
     for(i in 1:ncol(bottomLeftPointsRotated)) {
-      drawCubeBottomLeft(bottomLeftPointsRotated[,i],pixelDiameter,rotX,rotY,rotZ,borderColor,colors[pointColorsNewOrder[i]],visibleFacesUnitCube)
+      maximalExtensionXZ=max(maximalExtensionXZ,drawCubeBottomLeft(bottomLeftPointsRotated[,i],pixelDiameter,rotX,rotY,rotZ,borderColor,colors[pointColorsNewOrder[i]],visibleFacesUnitCube))
+    }
+    #warning if points lie outside of image boundary (inside drawCubeBottomLeft since all corners of the cubes must be checked)
+    if(showDimensionExceed && round(maximalExtensionXZ)-imageSize/2>0) {
+        writeLines(paste("Warning! Some points could not be drawn in file ",folder,fileName,".",fileFormat,
+                         "\nMaximal values are ",round(maximalExtensionXZ-imageSize/2)," pixels outside of image border",sep=""))
+    }
+    if(showDimensionExceed && round(maximalExtensionXZ)-imageSize/2==0) {
+      writeLines(paste("Warning! Some points in file ",folder,fileName,".",fileFormat,
+                       "\n lie exactly on the image border. Please inspect manually. (Image contains an even number of pixels so center is not symmetric)",sep=""))
     }
   }
   #save image

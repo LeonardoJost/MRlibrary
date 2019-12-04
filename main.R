@@ -14,16 +14,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#load all supporting functions
+##load all supporting functions
 source("functions/helpers.R")
 source("functions/mainLoops.R")
 source("functions/imageManipulation.R")
 source("functions/petersBattistaModels.R")
 source("functions/customModels.R")
 
-#set parameters
+##set parameters
+#load default values (if not all values are included in custom values)
+source("functions/parametersDefault.R")
+#load custom values
 source("functions/parameters.R")
 
-#generate all images according to parameters
+##generate all images according to parameters
 generateAllImages()
 
