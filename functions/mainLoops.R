@@ -56,9 +56,7 @@ generateAllImages=function(){
           rotY=rotationAngleYBase
           rotZ=rotationAngleZBase
           #get base model (not in model loop, as orientation changes need to be reversed)
-          bottomLeftPoints=centerModel(getModel(modelNumber,usePetersBattistaModels),centering)
-          #adjust length
-          bottomLeftPoints=bottomLeftPoints*pixelDiameter
+          bottomLeftPoints=getModel(modelNumber,usePetersBattistaModels)
           #get coloring
           pointColors=getColors(modelNumber,colors,usePetersBattistaModels)
           #mirror, if needed
@@ -69,6 +67,10 @@ generateAllImages=function(){
           } else if(orientation=="d") { #mirror along xy-plane (z-axis is reversed)
             bottomLeftPoints[3,]=-bottomLeftPoints[3,]
           }
+          #apply centering after orientation change
+          bottomLeftPoints=centerModel(bottomLeftPoints,centering)
+          #adjust length
+          bottomLeftPoints=bottomLeftPoints*pixelDiameter
           #save base model
           folder=paste(baseFolderWithBG,"base\\",sep="")
           fileName=paste(modelNumber,"_",orientation,sep="")

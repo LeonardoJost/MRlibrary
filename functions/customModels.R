@@ -96,17 +96,17 @@ getColors=function(number,colors,petersBattista,numberOfPoints=0) {
 }
 
 #apply centering to a model
-centerModel=function(model, type){
+centerModel=function(bottomLeftPoints, type){
   if(type=="none") {
     center=0
   } else if(type=="weight") {
     #by weight
-    center=apply(model,1,mean)+c(rep(0.5,3))
+    center=apply(bottomLeftPoints,1,mean)+c(rep(0.5,3))
   } else {
     #optical
-    maxs=apply(model,1,max)+1 #+1 because of bottomlefts
-    mins=apply(model,1,min)
+    maxs=apply(bottomLeftPoints,1,max)+1 #+1 because of bottomlefts
+    mins=apply(bottomLeftPoints,1,min)
     center=(maxs+mins)/2
   }
-  return(model-center)
+  return(bottomLeftPoints-center)
 }
