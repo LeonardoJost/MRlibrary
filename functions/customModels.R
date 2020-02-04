@@ -82,7 +82,8 @@ getModel=function(number,petersBattista){
                                c(zs[faceBoundary]))
     return(gridMatrix)
   } else {
-    return(NULL)
+    return(matrix(c(sample(-3:3,30,replace=T)),
+                  nrow=3))
   }
 }
 
