@@ -1,5 +1,5 @@
 # MRlibrary
-This library contains cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (Jost & Jansen, 2019).
+This library contains cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (Jost & Jansen, 2020). A linked OSF project is at https://osf.io/dr9mv/.
 
 ## Usage of pregenerated figures
 1. Open the figs folder.
@@ -34,7 +34,7 @@ The default background is transparent and should work well for most cases instea
 
 Optical centering is performed by centering the bounding box of the figure. An alternative would be to center the bounding ball, as it is invariant to rotation. For typical figures, where the bounding box is spanned by diagonal elements, or for symmetric figures (e.g. x or + shapes), this makes no difference, but small differences (not necessarily improvements) are possible for very asymmetric figures (e.g. T shapes). Additionally, the bounding box is much easier to compute.
 
-The default parameters differ in some places from the values used in Jost and Jansen (2019). This includes centering, size and base angles, which were chosen in part to be more comparable. Upon reflection, we have drafted these new suggestions as default. Not included in the default values is the additional advice to generate the pictures in the dimensions that are actually used to avoid artifacts from resizing.
+The default parameters differ in some places from the values used in Jost and Jansen (2020). This includes centering, size and base angles, which were chosen in part to be more comparable. Upon reflection, we have drafted these new suggestions as default. Not included in the default values is the additional advice to generate the pictures in the dimensions that are actually used to avoid artifacts from resizing.
 
 ## Other
 
@@ -44,7 +44,7 @@ The code works, but includes some questionable choices, needlessly complicated s
 ### Unused functions
 The project also includes some unused functions, which were nevertheless included and will be explained briefly:
 #### CustomImages.R
-This file was used to generate custom images, e.g. including more than one figure in a single image. The code can be used to recreate all images in Jost and Jansen (2019) or adapted for your own custom images.
+This file was used to generate custom images, e.g. including more than one figure in a single image. The code can be used to recreate all images in Jost and Jansen (2020) or adapted for your own custom images.
 #### ImageRotate.R
 This function was used to generate picture plane rotations of given images. Where only these rotations are needed and complex models are used, this code will run faster than generating each figure from scratch. Mildly experienced programmers will probably know alternatives (such as imagemagick software, on which the here used magick package is based).
 
@@ -54,7 +54,7 @@ Some simple adaptations, which can easily be done yourself:
 Open ImageManipulation.R and change the order in rotatePoint function.
 
 ## Literature
-Jost, L., & Jansen, P. (2019). A novel approach to analyzing mirrored stimuli in chronometric mental rotation and description of a flexible extended library of stimuli. Unpublished manuscript.
+Jost, L., & Jansen, P. (2020). A novel approach to analyzing all trials in chronometric mental rotation and description of a flexible extended library of stimuli. Spatial Cognition & Computation. DOI: 10.1080/13875868.2020.1754833
 
 Ooms, J. (2018). magick: Advanced Graphics and Image-Processing in R. R package version 2.0. https://CRAN.R-project.org/package=magick
 
