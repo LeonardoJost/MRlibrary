@@ -17,7 +17,7 @@
 
 #get the coordinates of the model
 getModel=function(number,petersBattista){
-  if(petersBattista)
+  if(petersBattista & number<17)
     return(getModelPetersBattista(number))
   if(number==1){
     #custom cube figure

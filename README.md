@@ -36,6 +36,9 @@ Optical centering is performed by centering the bounding box of the figure. An a
 
 The default parameters differ in some places from the values used in Jost and Jansen (2020). This includes centering, size and base angles, which were chosen in part to be more comparable. Upon reflection, we have drafted these new suggestions as default. Not included in the default values is the additional advice to generate the pictures in the dimensions that are actually used to avoid artifacts from resizing.
 
+### Congruency of figures
+Note that some figures can be transformed into one another. This applies at least to figures 1 and 2 as well as 8, 9, 10, and 12 of the original library of Peters and Battista. The transformations between the figures can be recreated using the script congruentFigures.R. This may not be relevant for rotations around one axis but might be relevant for complex rotations and combining multiple models in one image (i.e. structural distractors).
+
 ## Other
 
 ### Coding Issues

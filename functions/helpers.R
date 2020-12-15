@@ -75,15 +75,15 @@ addFaceToMatrix=function(gridMatrix,xs,ys,zs) {
 #show multiple figures in one image
 #only used by customImages.R
 #uses parameters, which are set only in customImages.R
-showImages=function(){
+showImages=function(multipleModels=FALSE){
   #set background color
   img=image_background(background, backgroundColor, flatten=TRUE)
   for(i in 1:nrow(pos)){
     #add single Figure to img
     #get base model
-    bottomLeftPoints=centerModel(getModel(modelNumber,usePetersBattistaModels),centering)
-    #adjust length
-    bottomLeftPoints=bottomLeftPoints*pixelDiameter
+    if(multipleModels)
+      modelNumber=multipleModelsNumber[i]
+    bottomLeftPoints=getModel(modelNumber,usePetersBattistaModels)
     #get coloring
     pointColors=getColors(modelNumber,colors,usePetersBattistaModels)
     #angles
@@ -99,6 +99,9 @@ showImages=function(){
     } else if(orientation=="d") { #mirror along xy-plane (z-axis is reversed)
       bottomLeftPoints[3,]=-bottomLeftPoints[3,]
     }
+    bottomLeftPoints=centerModel(bottomLeftPoints,centering)
+    #adjust length
+    bottomLeftPoints=bottomLeftPoints*pixelDiameter
     #add shift to position
     img=showCubeFigure(bottomLeftPoints,pixelDiameter,pointColors,img,rotX,rotY,rotZ,borderColor,colors,pos[i,]*pixelDiameter)
   }
