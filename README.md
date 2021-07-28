@@ -2,8 +2,7 @@
 This library contains cube figures, which are commonly used in mental rotation tests. The pregenerated figures are similar to the ones in the library of Peters and Battista (2008). Moreover, the library can be used to selfgenerate different models, angles, colors, etc. Further description can be found in the accompanying paper (Jost & Jansen, 2020). A linked OSF project is at https://osf.io/dr9mv/.
 
 ## Usage of pregenerated figures
-1. Open the figs folder.
-2. There they are. (see subfolders and naming structure)
+The pregenerated figures are available in the linked OSF project as `pregenerated figures.zip` to avoid versioning large/many files on github. (see subfolders and naming structure to locate individual figures)
 
 ## Usage to generate own figures
 1. Create R project/set working directory. Download/Clone the repository and open it as an R project or use the version control software of your choice to create an R project from this repository. Install magick package (Ooms, 2018) to your R distribution.
